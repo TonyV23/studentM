@@ -1,4 +1,6 @@
 package Actors;
 
-public class Student {
+public class Student extends Person{
+    private int inscription_number;
+
 }
