@@ -7,8 +7,8 @@ public class Agent extends Person{
 
     // the constructor
 
-    public Agent(String username_agent, String password_agent, int id_agent){
-        super();
+    public Agent(String name, String surname, int age, char sex ,String username_agent, String password_agent, int id_agent){
+        super(name, surname, age, sex);
         this.username_agent = username_agent;
         this.password_agent = password_agent;
         this.id_agent = id_agent;
