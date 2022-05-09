@@ -2,8 +2,8 @@ package Models;
 
 public class Class {
     private String class_name;
-    Faculty faculty_name;
-    Department department_class_name;
+    private Faculty faculty_name;
+    private Department department_class_name;
 
     // the constructor
 
