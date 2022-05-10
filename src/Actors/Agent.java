@@ -1,5 +1,10 @@
 package Actors;
 
+import InputOutput.Io;
+import Utils.GiveMe;
+
+import java.util.ArrayList;
+
 public class Agent extends Person{
     private String username_agent;
     private String password_agent;
@@ -7,7 +12,7 @@ public class Agent extends Person{
 
     // the constructor
 
-    public Agent(String name, String surname, int age, char sex ,String username_agent, String password_agent, int id_agent){
+    public Agent(String name, String surname, int age, String sex , String username_agent, String password_agent, int id_agent){
         super(name, surname, age, sex);
         this.username_agent = username_agent;
         this.password_agent = password_agent;
@@ -44,4 +49,9 @@ public class Agent extends Person{
     public void setId_agent(int id_agent) {
         this.id_agent = id_agent;
     }
+
+    /** Agent 's actions on students */
+
+    // Student new_student = new Student(Io.setString("Student name :"),Io.setString("Student surname :"),Io.setINT("Year of Birth :"),Io.setString("Gender"),GiveMe.random_integer(),,);
+
 }

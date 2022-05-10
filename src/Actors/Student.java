@@ -11,7 +11,7 @@ public class Student extends Person{
 
     // the constructor
 
-    public Student(String name, String surname, int age, char sex ,int inscription_number, Faculty faculty_name,Agent agent_name){
+    public Student(String name, String surname, int age, String sex ,int inscription_number, Faculty faculty_name,Agent agent_name){
         super(name, surname, age, sex);
         this.inscription_number = inscription_number;
         this.faculty_name = faculty_name;

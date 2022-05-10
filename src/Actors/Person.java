@@ -4,11 +4,11 @@ public class Person {
     private String name;
     private String surname;
     private int age;
-    private char sex;
+    private String sex;
 
     // the person's constructor
 
-    public Person(String name, String surname, int age, char sex){
+    public Person(String name, String surname, int age, String sex){
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -45,11 +45,11 @@ public class Person {
         this.age = age;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 }
