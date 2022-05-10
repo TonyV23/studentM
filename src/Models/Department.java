@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.ArrayList;
+
 public class Department {
     private String department_name;
     private Faculty faculty_department_name;
@@ -9,7 +11,10 @@ public class Department {
     public Department(String department_name, Faculty faculty_department_name){
         this.department_name = department_name;
         this.faculty_department_name = faculty_department_name;
+        All_department_list.add(this);
     }
+
+    ArrayList<Department> All_department_list = new ArrayList<>();
 
     // the empty Constructor
 

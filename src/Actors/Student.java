@@ -4,6 +4,8 @@ import Models.Class;
 import Models.Department;
 import Models.Faculty;
 
+import java.util.ArrayList;
+
 public class Student extends Person{
     private int inscription_number;
     private Faculty faculty_name;
@@ -16,7 +18,10 @@ public class Student extends Person{
         this.inscription_number = inscription_number;
         this.faculty_name = faculty_name;
         this.agent_name = agent_name;
+        All_students_list.add(this);
     }
+
+    ArrayList<Student> All_students_list = new ArrayList<>();
 
     //the empty constructor
 
