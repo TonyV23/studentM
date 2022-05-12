@@ -54,9 +54,9 @@ public class Faculty {
     }
 
 
-    public void updateFaculty(){
+    public static void updateFaculty(){
         displayAllFaculties();
-        All_faculties_list.set(Io.setINT("Number of faculty to update :"),new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
+        All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
     }
 
 
