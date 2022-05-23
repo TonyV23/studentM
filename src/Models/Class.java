@@ -53,18 +53,40 @@ public class Class {
     }
 
     public static void updateClass(){
-        displayAllClass();
-        All_class_list.set(Io.setINT("Number of department to update :")-1,new Class(Io.setString("class name :"),All_faculties_list.get(Io.setINT("Number of faculty :"))));
+        if (All_class_list.size()>0){
+            System.err.print("\nLIST OF ALL FACULTIES\n");
+            displayAllFaculties();
+            System.err.print("\nLIST OF ALL CLASS\n");
+            displayAllClass();
+            All_class_list.set(Io.setINT("Number of class to update :")-1,
+                    new Class(Io.setString("class name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1)));
+            All_class_list.remove(All_class_list.size()-1);
+            System.out.print("\n******* UPDATED LIST OF CLASS *******\n");
+            displayAllClass();
+        }else
+            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
     }
 
     public static void removeClass(){
-        displayAllClass();
-        All_class_list.remove(Io.setINT("Number of department to remove :")-1);
-        System.out.print("Updated List :" +All_class_list);
+        if (All_class_list.size()>0){
+            displayAllClass();
+            All_class_list.remove(Io.setINT("Number of class to remove :")-1);
+            System.out.print("\n******* UPDATED LIST OF CLASS *******\n");
+            displayAllClass();
+        }else
+            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
+
     }
 
     public static void displayAllClass(){
-        System.out.print("All class list :"+All_class_list);
+        if ( All_class_list.size()> 0){
+            for (int i=0; i< All_class_list.size(); ++i){
+                System.out.print(
+                        i+1+">>>>>Class name :"+All_class_list.get(i).getClass_name()+"\t"+
+                                "Faculty name :"+All_faculties_list.get(i).getFaculty_name()+"\n"
+                );
+            }
+        }else
+            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
     }
-
 }
