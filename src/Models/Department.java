@@ -46,9 +46,9 @@ public class Department {
 
     // methods about handling departments
 
-    public static void createNewDepartment(){
+    public static void createNewDepartment() throws IndexOutOfBoundsException{
         displayAllFaculties();
-        new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")));
+        new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
     }
 
     public static void updateDepartment(){

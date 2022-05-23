@@ -50,17 +50,29 @@ public class Faculty {
     public static void removeFaculty(){
         displayAllFaculties();
         All_faculties_list.remove(Io.setINT("Number of faculty to remove :")-1);
-        System.out.print("Updated List :" +All_faculties_list);
+        System.err.print("\n ******* Updated of All faculties list *******\n");
+        displayAllFaculties();
     }
 
 
     public static void updateFaculty(){
         displayAllFaculties();
         All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
+        System.err.print("\n ******* Updated All faculties list *******\n");
+        All_faculties_list.remove(All_faculties_list.size()-1);
+        displayAllFaculties();
     }
 
 
     public static void displayAllFaculties(){
-        System.out.print("All faculties list :" +All_faculties_list);
+        if ( All_faculties_list.size()> 0){
+            for (int i=0; i< All_faculties_list.size(); ++i){
+                System.out.print(
+                        i+1+">>>>>Faculty name :"+All_faculties_list.get(i).getFaculty_name()+"\t"+
+                                "About Faculty :"+All_faculties_list.get(i).getFaculty_about()+"\n"
+                );
+            }
+        }else
+            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
     }
 }
