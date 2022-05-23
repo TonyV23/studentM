@@ -52,23 +52,30 @@ public class Department {
     }
 
     public static void updateDepartment(){
-        System.err.print("\nLIST OF ALL FACULTIES\n");
-        displayAllFaculties();
-        System.err.print("\nLIST OF ALL DEPARTMENT\n");
-        displayAllDepartments();
-        All_departments_list.set(Io.setINT("Department's number to update :")-1,
-                new Department(Io.setString("Name's department :"),
-                        All_faculties_list.get(Io.setINT("faculty's number :")-1)));
-        System.err.print("\n ******* Updated of All department list *******\n");
-        All_departments_list.remove(All_departments_list.size()-1);
-        displayAllDepartments();
+        if (All_departments_list.size()>0){
+            System.err.print("\nLIST OF ALL FACULTIES\n");
+            displayAllFaculties();
+            System.err.print("\nLIST OF ALL DEPARTMENT\n");
+            displayAllDepartments();
+            All_departments_list.set(Io.setINT("Department's number to update :")-1,
+                    new Department(Io.setString("Name's department :"),
+                            All_faculties_list.get(Io.setINT("faculty's number :")-1)));
+            System.err.print("\n ******* Updated of All department list *******\n");
+            All_departments_list.remove(All_departments_list.size()-1);
+            displayAllDepartments();
+        }else
+            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
+
     }
 
     public static void removeDepartment(){
-        displayAllDepartments();
-        All_departments_list.remove(Io.setINT("Number of department to remove :")-1);
-        System.err.print("\n ******* Updated of All department list *******\n");
-        displayAllDepartments();
+        if (All_departments_list.size()>0){
+            displayAllDepartments();
+            All_departments_list.remove(Io.setINT("Number of department to remove :")-1);
+            System.err.print("\n ******* Updated of All department list *******\n");
+            displayAllDepartments();
+        }else
+            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
     }
 
     public static void displayAllDepartments(){

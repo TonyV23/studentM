@@ -48,21 +48,26 @@ public class Faculty {
     }
 
     public static void removeFaculty(){
-        displayAllFaculties();
-        All_faculties_list.remove(Io.setINT("Number of faculty to remove :")-1);
-        System.err.print("\n ******* Updated of All faculties list *******\n");
-        displayAllFaculties();
+        if (All_faculties_list.size()>0){
+            displayAllFaculties();
+            All_faculties_list.remove(Io.setINT("Number of faculty to remove :")-1);
+            System.err.print("\n ******* Updated of All faculties list *******\n");
+            displayAllFaculties();
+        }else
+            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
     }
 
 
     public static void updateFaculty(){
-        displayAllFaculties();
-        All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
-        System.err.print("\n ******* Updated All faculties list *******\n");
-        All_faculties_list.remove(All_faculties_list.size()-1);
-        displayAllFaculties();
+        if (All_faculties_list.size()>0){
+            displayAllFaculties();
+            All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
+            System.err.print("\n ******* Updated All faculties list *******\n");
+            All_faculties_list.remove(All_faculties_list.size()-1);
+            displayAllFaculties();
+        }else
+            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
     }
-
 
     public static void displayAllFaculties(){
         if ( All_faculties_list.size()> 0){
