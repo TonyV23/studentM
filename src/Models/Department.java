@@ -46,23 +46,40 @@ public class Department {
 
     // methods about handling departments
 
-    public static void createNewDepartment() throws IndexOutOfBoundsException{
+    public static void createNewDepartment() {
         displayAllFaculties();
         new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
     }
 
     public static void updateDepartment(){
+        System.err.print("\nLIST OF ALL FACULTIES\n");
+        displayAllFaculties();
+        System.err.print("\nLIST OF ALL DEPARTMENT\n");
         displayAllDepartments();
-        All_departments_list.set(Io.setINT("Number of department to update :")-1,new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :"))));
+        All_departments_list.set(Io.setINT("Department's number to update :")-1,
+                new Department(Io.setString("Name's department :"),
+                        All_faculties_list.get(Io.setINT("faculty's number :")-1)));
+        System.err.print("\n ******* Updated of All department list *******\n");
+        All_departments_list.remove(All_departments_list.size()-1);
+        displayAllDepartments();
     }
 
     public static void removeDepartment(){
         displayAllDepartments();
         All_departments_list.remove(Io.setINT("Number of department to remove :")-1);
-        System.out.print("Updated List :" +All_departments_list);
+        System.err.print("\n ******* Updated of All department list *******\n");
+        displayAllDepartments();
     }
 
     public static void displayAllDepartments(){
-        System.out.print("All departments list :"+All_departments_list);
+        if ( All_departments_list.size()> 0){
+            for (int i=0; i< All_departments_list.size(); ++i){
+                System.out.print(
+                        i+1+">>>>>Department name :"+All_departments_list.get(i).getDepartment_name()+"\t"+
+                                "belongs to the faculty of :"+All_faculties_list.get(i).getFaculty_name()+"\n"
+                );
+            }
+        }else
+            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
     }
 }
