@@ -53,7 +53,7 @@ public class Class {
     }
 
     public static void updateClass(){
-        if (All_class_list.size()>0){
+        if (!All_class_list.isEmpty()){
             System.err.print("\nLIST OF ALL FACULTIES\n");
             displayAllFaculties();
             System.err.print("\nLIST OF ALL CLASS\n");
@@ -64,22 +64,22 @@ public class Class {
             System.out.print("\n******* UPDATED LIST OF CLASS *******\n");
             displayAllClass();
         }else
-            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
+            System.err.print("\n ******* Error no class registered ******* \n");
     }
 
     public static void removeClass(){
-        if (All_class_list.size()>0){
+        if (!All_class_list.isEmpty()){
             displayAllClass();
             All_class_list.remove(Io.setINT("Number of class to remove :")-1);
             System.out.print("\n******* UPDATED LIST OF CLASS *******\n");
             displayAllClass();
         }else
-            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
+            System.err.print("\n ******* Error no class registered ******* \n");
 
     }
 
     public static void displayAllClass(){
-        if ( All_class_list.size()> 0){
+        if ( !All_class_list.isEmpty()){
             for (int i=0; i< All_class_list.size(); ++i){
                 System.out.print(
                         i+1+">>>>>Class name :"+All_class_list.get(i).getClass_name()+"\t"+
@@ -87,6 +87,6 @@ public class Class {
                 );
             }
         }else
-            System.err.print("\n******* Error class' list is empty for now please save some Class and try again this operation *******\n");
+            System.err.print("\n ******* Error no class registered ******* \n");
     }
 }

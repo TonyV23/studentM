@@ -50,8 +50,6 @@ public class Agent extends Person{
         this.id_agent = id_agent;
     }
 
-    /** Agent 's actions on students */
-
     // Student new_student = new Student(Io.setString("Student name :"),Io.setString("Student surname :"),Io.setINT("Year of Birth :"),Io.setString("Gender"),GiveMe.random_integer(),,);
 
 }

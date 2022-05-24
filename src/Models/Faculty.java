@@ -16,7 +16,7 @@ public class Faculty {
         All_faculties_list.add(this);
     }
 
-    static ArrayList<Faculty> All_faculties_list = new ArrayList<>();
+    public static ArrayList<Faculty> All_faculties_list = new ArrayList<>();
 
     // the empty constructor
 
@@ -48,29 +48,29 @@ public class Faculty {
     }
 
     public static void removeFaculty(){
-        if (All_faculties_list.size()>0){
+        if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
             All_faculties_list.remove(Io.setINT("Number of faculty to remove :")-1);
             System.err.print("\n ******* Updated of All faculties list *******\n");
             displayAllFaculties();
         }else
-            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
+            System.err.print("\n******* Error no faculty registered *******\n");
     }
 
 
     public static void updateFaculty(){
-        if (All_faculties_list.size()>0){
+        if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
             All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
             System.err.print("\n ******* Updated All faculties list *******\n");
             All_faculties_list.remove(All_faculties_list.size()-1);
             displayAllFaculties();
         }else
-            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
+            System.err.print("\n******* Error no faculty registered *******\n");
     }
 
     public static void displayAllFaculties(){
-        if ( All_faculties_list.size()> 0){
+        if ( !All_faculties_list.isEmpty()){
             for (int i=0; i< All_faculties_list.size(); ++i){
                 System.out.print(
                         i+1+">>>>>Faculty name :"+All_faculties_list.get(i).getFaculty_name()+"\t"+
@@ -78,6 +78,6 @@ public class Faculty {
                 );
             }
         }else
-            System.err.print("\n******* Error faculties' list is empty for now please save some Faculties and try again this operation *******\n");
+            System.err.print("\n******* Error no faculty registered *******\n");
     }
 }

@@ -19,7 +19,7 @@ public class Department {
         All_departments_list.add(this);
     }
 
-    static ArrayList<Department> All_departments_list = new ArrayList<>();
+    public static ArrayList<Department> All_departments_list = new ArrayList<>();
 
     // the empty Constructor
 
@@ -52,7 +52,7 @@ public class Department {
     }
 
     public static void updateDepartment(){
-        if (All_departments_list.size()>0){
+        if (!All_departments_list.isEmpty()){
             System.err.print("\nLIST OF ALL FACULTIES\n");
             displayAllFaculties();
             System.err.print("\nLIST OF ALL DEPARTMENT\n");
@@ -64,22 +64,22 @@ public class Department {
             All_departments_list.remove(All_departments_list.size()-1);
             displayAllDepartments();
         }else
-            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
+            System.err.print("\n******* Error no department registered *******\n");
 
     }
 
     public static void removeDepartment(){
-        if (All_departments_list.size()>0){
+        if (!All_departments_list.isEmpty()){
             displayAllDepartments();
             All_departments_list.remove(Io.setINT("Number of department to remove :")-1);
             System.err.print("\n ******* Updated of All department list *******\n");
             displayAllDepartments();
         }else
-            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
+            System.err.print("\n******* Error no department registered *******\n");
     }
 
     public static void displayAllDepartments(){
-        if ( All_departments_list.size()> 0){
+        if ( !All_departments_list.isEmpty()){
             for (int i=0; i< All_departments_list.size(); ++i){
                 System.out.print(
                         i+1+">>>>>Department name :"+All_departments_list.get(i).getDepartment_name()+"\t"+
@@ -87,6 +87,6 @@ public class Department {
                 );
             }
         }else
-            System.err.print("\n******* Error departments' list is empty for now please save some department and try again this operation *******\n");
+            System.err.print("\n******* Error no department registered *******\n");
     }
 }
