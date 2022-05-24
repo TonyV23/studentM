@@ -48,8 +48,11 @@ public class Class {
     // methods about handling departments
 
     public static void createNewClass(){
-        displayAllFaculties();
-        new Class(Io.setString("Class name :"),All_faculties_list.get(Io.setINT("Number of faculty :")));
+        if (!All_faculties_list.isEmpty()){
+            displayAllFaculties();
+            new Class(Io.setString("Class name :"),All_faculties_list.get(Io.setINT("Number of faculty :")));
+        }else
+            System.err.print("\n******* Error no faculty registered *******\n");
     }
 
     public static void updateClass(){

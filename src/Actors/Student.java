@@ -78,7 +78,7 @@ public class Student extends Person{
             displayAllDepartments();
             new Student(Io.setString("Student name :"),Io.setString("Student surname :"),
                     Io.setINT("Age of birth :"),Io.setString("Sex :"), GiveMe.random_integer(),
-                    Io.setString("Faculty name"),Io.setString("Department name"),Io.setString("Class name"));
+                    Io.setString("Faculty name :"),Io.setString("Department name :"),Io.setString("Class name :"));
         }else
             System.err.print("\n******* Error no faculty and department registered *******\n");
     }

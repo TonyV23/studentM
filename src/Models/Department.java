@@ -47,8 +47,12 @@ public class Department {
     // methods about handling departments
 
     public static void createNewDepartment() {
-        displayAllFaculties();
-        new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
+        if (!All_faculties_list.isEmpty()){
+            displayAllFaculties();
+            new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
+        }else
+            System.err.print("\n******* Error no faculty registered *******\n");
+
     }
 
     public static void updateDepartment(){
