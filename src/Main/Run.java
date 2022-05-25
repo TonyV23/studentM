@@ -73,10 +73,10 @@ public class Run {
     }
 
     public static void main(String[] args) {
+        System.out.print("\t\tLOGIN\t\t");
+        String user_name = Io.setString("\nUsername :");
+        String user_password = Io.setString("\nPassword :");
         while (true){
-            System.out.print("\t\tLOGIN\t\t");
-            String user_name = Io.setString("\nUsername :");
-            String user_password = Io.setString("\nPassword :");
             if (user_name.contentEquals("ULT") && user_password.contentEquals("123")){
                 System.out.print("\n **** WELCOME TO OUR APPLICATION ****\n");
                 getIN();

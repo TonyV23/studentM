@@ -50,7 +50,7 @@ public class Class {
     public static void createNewClass(){
         if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
-            new Class(Io.setString("Class name :"),All_faculties_list.get(Io.setINT("Number of faculty :")));
+            new Class(Io.setString("Class name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
         }else
             System.err.print("\n******* Error no faculty registered *******\n");
     }
