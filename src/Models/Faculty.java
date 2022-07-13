@@ -44,40 +44,40 @@ public class Faculty {
     // method about handling faculties
 
     public static void createNewFaculty(){
-         new Faculty(Io.setString("Faculty name :"),Io.setString("Faculty about :"));
+         new Faculty(Io.setString("Nom de la Faculty :"),Io.setString("A propos de la Faculté:"));
     }
 
     public static void removeFaculty(){
         if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
-            All_faculties_list.remove(Io.setINT("Number of faculty to remove :")-1);
-            System.err.print("\n ******* Updated of All faculties list *******\n");
+            All_faculties_list.remove(Io.setINT("Numero de la faculté à supprimer :")-1);
+            System.err.print("\n ******* LISTE DE TOUTES LES FACULTES MISE A JOUR *******\n");
             displayAllFaculties();
         }else
-            System.err.print("\n******* Error no faculty registered *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
     }
 
 
     public static void updateFaculty(){
         if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
-            All_faculties_list.set(Io.setINT("Number of faculty to update :")-1,new Faculty(Io.setString("New faculty name :"),Io.setString("Add Faculty about :")));
-            System.err.print("\n ******* Updated All faculties list *******\n");
+            All_faculties_list.set(Io.setINT("Numero de la faculté à modifier :")-1,new Faculty(Io.setString("Nouveau nom de la faculté :"),Io.setString("A propos de la faculté :")));
+            System.err.print("\n ******* LISTE DE TOUTES LES FACULTES MISE A JOUR *******\n");
             All_faculties_list.remove(All_faculties_list.size()-1);
             displayAllFaculties();
         }else
-            System.err.print("\n******* Error no faculty registered *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
     }
 
     public static void displayAllFaculties(){
         if ( !All_faculties_list.isEmpty()){
             for (int i=0; i< All_faculties_list.size(); ++i){
                 System.out.print(
-                        i+1+">>>>>Faculty name :"+All_faculties_list.get(i).getFaculty_name()+"\t"+
-                                "About Faculty :"+All_faculties_list.get(i).getFaculty_about()+"\n"
+                        i+1+">>>>>NOM DE LA FACULTE :"+All_faculties_list.get(i).getFaculty_name()+"\t"+
+                                "A propos de la Faculté :"+All_faculties_list.get(i).getFaculty_about()+"\n"
                 );
             }
         }else
-            System.err.print("\n******* Error no faculty registered *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
     }
 }

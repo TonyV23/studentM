@@ -11,7 +11,7 @@ public class Department {
     private String department_name;
     private Faculty faculty_department_name;
 
-    // the Department constructor
+    // le constructeur de la classe departement
 
     public Department(String department_name, Faculty faculty_department_name){
         this.department_name = department_name;
@@ -19,13 +19,14 @@ public class Department {
         All_departments_list.add(this);
     }
 
+    // la lsite qui va contenir la liste de tous les departements
     public static ArrayList<Department> All_departments_list = new ArrayList<>();
 
-    // the empty Constructor
+    // le constructeur vide de la classe departement
 
     public Department(){}
 
-    // Getters and Setters
+    // les Getters et les Setters
 
 
     public String getDepartment_name() {
@@ -49,48 +50,48 @@ public class Department {
     public static void createNewDepartment() {
         if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
-            new Department(Io.setString("Department name :"),All_faculties_list.get(Io.setINT("Number of faculty :")-1));
+            new Department(Io.setString("Nom du departement :"),All_faculties_list.get(Io.setINT("Numero de la faculté :")-1));
         }else
-            System.err.print("\n******* Error no faculty registered *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
 
     }
 
     public static void updateDepartment(){
         if (!All_departments_list.isEmpty()){
-            System.err.print("\nLIST OF ALL FACULTIES\n");
+            System.err.print("\nLISTE DE TOUTES LES FACULTES\n");
             displayAllFaculties();
-            System.err.print("\nLIST OF ALL DEPARTMENT\n");
+            System.err.print("\nLISTE DE TOUS LES DEPARTEMENTS\n");
             displayAllDepartments();
-            All_departments_list.set(Io.setINT("Department's number to update :")-1,
-                    new Department(Io.setString("Name's department :"),
-                            All_faculties_list.get(Io.setINT("faculty's number :")-1)));
-            System.err.print("\n ******* Updated of All department list *******\n");
+            All_departments_list.set(Io.setINT("Numero du departement à modifier :")-1,
+                    new Department(Io.setString("Nom du departement :"),
+                            All_faculties_list.get(Io.setINT("numero de la faculté :")-1)));
+            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENT MISE A JOUR *******\n");
             All_departments_list.remove(All_departments_list.size()-1);
             displayAllDepartments();
         }else
-            System.err.print("\n******* Error no department registered *******\n");
+            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
 
     }
 
     public static void removeDepartment(){
         if (!All_departments_list.isEmpty()){
             displayAllDepartments();
-            All_departments_list.remove(Io.setINT("Number of department to remove :")-1);
-            System.err.print("\n ******* Updated of All department list *******\n");
+            All_departments_list.remove(Io.setINT("Numero du departement à supprimer :")-1);
+            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENT MISE A JOUR *******\n");
             displayAllDepartments();
         }else
-            System.err.print("\n******* Error no department registered *******\n");
+            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
     }
 
     public static void displayAllDepartments(){
         if ( !All_departments_list.isEmpty()){
             for (int i=0; i< All_departments_list.size(); ++i){
                 System.out.print(
-                        i+1+">>>>>Department name :"+All_departments_list.get(i).getDepartment_name()+"\t"+
-                                "belongs to the faculty of :"+All_faculties_list.get(i).getFaculty_name()+"\n"
+                        i+1+">>>>>Nom du Department :"+All_departments_list.get(i).getDepartment_name()+"\t"+
+                                "de la Faculté :"+All_faculties_list.get(i).getFaculty_name()+"\n"
                 );
             }
         }else
-            System.err.print("\n******* Error no department registered *******\n");
+            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
     }
 }

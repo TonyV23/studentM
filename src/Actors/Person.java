@@ -6,7 +6,7 @@ public class Person {
     private int age;
     private String sex;
 
-    // the person's constructor
+    // le constructeur de la classe Person
 
     public Person(String name, String surname, int age, String sex){
         this.name = name;
@@ -15,11 +15,11 @@ public class Person {
         this.sex = sex;
     }
 
-    // the empty constructor
+    // le constructeur vide
 
     public Person(){}
 
-    // Getters and Setters
+    // les Getters et les Setters
 
     public String getName() {
         return name;

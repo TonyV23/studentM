@@ -23,7 +23,7 @@ public class Io {
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (NumberFormatException ex) {
-                System.err.print("please set an integer here");
+                System.err.print("Veuillez saisir un Integer");
             }
         } while (true);
         return value_int;
@@ -41,7 +41,7 @@ public class Io {
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (NumberFormatException ex) {
-                System.err.print("please set an float here");
+                System.err.print("Veuillez saisir un Float");
             }
         } while (true);
         return value_float;
