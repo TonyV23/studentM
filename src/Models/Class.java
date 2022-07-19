@@ -53,7 +53,7 @@ public class Class {
             displayAllFaculties();
             new Class(Io.setString("Nom de la classe :"),All_faculties_list.get(Io.setINT("Numero de la faculté :")));
         }else
-            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
     }
 
     public static void updateClass(){
@@ -68,7 +68,7 @@ public class Class {
             System.out.print("\n******* LISTE DE TOUTES LES CLASSES MISE A JOUR *******\n");
             displayAllClass();
         }else
-            System.err.print("\n ******* Erreur aucun departement n'a été enregistré ******* \n");
+            System.err.print("\n ******* Erreur aucun département n'a été enregistré ******* \n");
     }
 
     public static void removeClass(){
@@ -78,7 +78,7 @@ public class Class {
             System.out.print("\n******* LISTE DE TOUTES LES CLASSES MISE A JOUR *******\n");
             displayAllClass();
         }else
-            System.err.print("\n ******* Erreur aucune classe n'a été enregisté ******* \n");
+            System.err.print("\n ******* Erreur aucune classe n'a été enregistré ******* \n");
 
     }
 
@@ -91,6 +91,6 @@ public class Class {
                 );
             }
         }else
-            System.err.print("\n ******* Erreur aucune classe n'a été enregisté ******* \n");
+            System.err.print("\n ******* Erreur aucune classe n'a été enregistré ******* \n");
     }
 }

@@ -98,8 +98,8 @@ public class Student extends Person{
         if (!All_students_list.isEmpty()){
             System.err.print("\nLISTE DE TOUS LES ETUDIANTS\n");
             displayAllStudents();
-            All_students_list.set(Io.setINT("Numero de l'etudiant à modifier :")-1,
-                    new Student(Io.setString("Nouveau nom de l'etudiant :"),Io.setString("Nouveau prenom de l'etudiant :"),
+            All_students_list.set(Io.setINT("Numero de l'étudiant à modifier :")-1,
+                    new Student(Io.setString("Nouveau nom de l'étudiant :"),Io.setString("Nouveau prenom de l'étudiant :"),
                             Io.setINT("Année de naissance :"),Io.setString("Sexe :"), GiveMe.random_integer(),
                             Io.setString("Nom de la Faculté :"),Io.setString("Nom du département :"),
                             Io.setString("Nom de la classe :"))
@@ -115,14 +115,14 @@ public class Student extends Person{
         if (!All_students_list.isEmpty()){
             for (int i = 0; i < All_students_list.size(); i++) {
                 System.out.print("\n"+i+1+
-                        ">>>Nom de l'etudiant :"+All_students_list.get(i).getName()+
-                        "\tPrenom de l'etudiant :"+All_students_list.get(i).getSurname()+
+                        ">>>  Nom de l'étudiant :"+All_students_list.get(i).getName()+
+                        "\tPrenom de l'étudiant :"+All_students_list.get(i).getSurname()+
                         "\tAnnée de naissance :"+All_students_list.get(i).getAge()+
                         "\tSexe :"+All_students_list.get(i).getSex()+
                         "\tNumero de l'inscription :"+All_students_list.get(i).getInscription_number()+
                         "\tFaculté :"+All_students_list.get(i).getFaculty_name()+
                         "\tDépartement :"+All_students_list.get(i).getDepartment_name()+
-                        "\tClasse :"+All_students_list.get(i).getClass_name()+"\n"
+                        "\tClasse :"+All_students_list.get(i).getClass_name()+"\n"+"\n"
                 );
             }
         }else

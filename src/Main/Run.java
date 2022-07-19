@@ -8,13 +8,13 @@ import Models.Faculty;
 
 public class Run {
     private static void getIN(){
-            switch (Io.setINT("\n1.Operation sur les Etudiants\t2.Operation sur Les Facultés\t" +
-                    "3.Operation sur les Departements\t4.Operation les Classes\t5.Quitter et Fermer l'application" +
-                    "\n*** Choisir une action *** :")){
+            switch (Io.setINT("\n1.Operation sur les Etudiants\n2.Operation sur Les Facultés\n" +
+                    "3.Operation sur les Départements\n4.Operation les Classes\n5.Quitter et Fermer l'application" +
+                    "\n\n*** Choisir une action *** :")){
                 case 1:
                     switch (Io.setINT("\n1.Enregistrer un nouveau Etudiant\n2.Modifier un Etudiant\n" +
-                            "3.Supprimer un Etudiant\n4.Afficher la Liste de tous les Etudiants\t5.Quitter et Fermer l'application\t6.Retour au Menu" +
-                            "\n*** Choisir une action *** :")) {
+                            "3.Supprimer un Etudiant\n4.Afficher la Liste de tous les Etudiants\n5.Quitter et Fermer l'application\n6.Retour au Menu" +
+                            "\n\n*** Choisir une action *** :")) {
                         case 1 -> Student.createNewStudent();
                         case 2 -> Student.updateStudent();
                         case 3 -> Student.removeStudent();
@@ -26,8 +26,8 @@ public class Run {
                     break;
                 case 2:
                     switch (Io.setINT("\n1.Créer une nouvelle Faculté.\n2.Modifier une Faculté\n" +
-                            "3.Supprimer une Faculté\n4.Afficher la Liste de toutes les facultés\t5.Quitter et Fermer l'application\t6.Retour au Menu" +
-                            "\n*** Choisir une action *** :")) {
+                            "3.Supprimer une Faculté\n4.Afficher la Liste de toutes les facultés\n5.Quitter et Fermer l'application\n6.Retour au Menu" +
+                            "\n\n*** Choisir une action *** :")) {
                         case 1 -> Faculty.createNewFaculty();
                         case 2 -> Faculty.updateFaculty();
                         case 3 -> Faculty.removeFaculty();
@@ -38,9 +38,9 @@ public class Run {
                     }
                     break;
                 case 3:
-                    switch (Io.setINT("\n1Créer un nouveau Departement.\n2.Modifier un Departement\n" +
-                            "3.Supprimer un Departement\n4.Afficher la Liste de tous les Departements\t5.Quitter et Fermer l'application\t6.Retour au Menu" +
-                            "\n*** Choisir une action *** :")) {
+                    switch (Io.setINT("\n1Créer un nouveau Département.\n2.Modifier un Département\n" +
+                            "3.Supprimer un Département\n4.Afficher la Liste de tous les Départements\n5.Quitter et Fermer l'application\n6.Retour au Menu" +
+                            "\n\n*** Choisir une action *** :")) {
                         case 1 -> Department.createNewDepartment();
                         case 2 -> Department.updateDepartment();
                         case 3 -> Department.removeDepartment();
@@ -52,8 +52,8 @@ public class Run {
                     break;
                 case 4:
                     switch (Io.setINT("\n1Créer une nouvelle Classe.\n2.Modifier une Classe\n" +
-                            "3.Supprimer une Classe\n4.Afficher la Liste de toutes les Classes\t5.Quitter et Fermer l'application\t6.Retour au Menu" +
-                            "\n*** Choisir une action *** :")) {
+                            "3.Supprimer une Classe\n4.Afficher la Liste de toutes les Classes\n5.Quitter et Fermer l'application\n6.Retour au Menu" +
+                            "\n\n*** Choisir une action *** :")) {
                         case 1 -> Class.createNewClass();
                         case 2 -> Class.updateClass();
                         case 3 -> Class.removeClass();
@@ -73,12 +73,12 @@ public class Run {
     }
 
     public static void main(String[] args) {
+        System.err.print("\n **** BIENVENU A NOTRE APPLICATION ****\n");
         System.out.print("\t\tCONNEXION\t\t");
         String user_name = Io.setString("\nVOTRE NOM UTILISATEUR :");
         String user_password = Io.setString("\nVOTRE MOT DE PASSE :");
         while (true){
             if (user_name.contentEquals("ULT") && user_password.contentEquals("123")){
-                System.out.print("\n **** BIENVENU A NOTRE APPLICATION ****\n");
                 getIN();
             }else
                 System.err.print("\n **** Oops NOM UTILISATEUR OU MOT DE PASSE INCORRECT VEUILLEZ REESSAYER ****\n");

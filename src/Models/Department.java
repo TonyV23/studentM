@@ -11,7 +11,7 @@ public class Department {
     private String department_name;
     private Faculty faculty_department_name;
 
-    // le constructeur de la classe departement
+    // le constructeur de la classe département
 
     public Department(String department_name, Faculty faculty_department_name){
         this.department_name = department_name;
@@ -19,10 +19,10 @@ public class Department {
         All_departments_list.add(this);
     }
 
-    // la lsite qui va contenir la liste de tous les departements
+    // la liste qui va contenir la liste de tous les départements
     public static ArrayList<Department> All_departments_list = new ArrayList<>();
 
-    // le constructeur vide de la classe departement
+    // le constructeur vide de la classe département
 
     public Department(){}
 
@@ -50,7 +50,7 @@ public class Department {
     public static void createNewDepartment() {
         if (!All_faculties_list.isEmpty()){
             displayAllFaculties();
-            new Department(Io.setString("Nom du departement :"),All_faculties_list.get(Io.setINT("Numero de la faculté :")-1));
+            new Department(Io.setString("Nom du département :"),All_faculties_list.get(Io.setINT("Numero de la faculté :")-1));
         }else
             System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
 
@@ -62,25 +62,25 @@ public class Department {
             displayAllFaculties();
             System.err.print("\nLISTE DE TOUS LES DEPARTEMENTS\n");
             displayAllDepartments();
-            All_departments_list.set(Io.setINT("Numero du departement à modifier :")-1,
-                    new Department(Io.setString("Nom du departement :"),
+            All_departments_list.set(Io.setINT("Numero du département à modifier :")-1,
+                    new Department(Io.setString("Nom du département :"),
                             All_faculties_list.get(Io.setINT("numero de la faculté :")-1)));
-            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENT MISE A JOUR *******\n");
+            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENTS MISE A JOUR *******\n");
             All_departments_list.remove(All_departments_list.size()-1);
             displayAllDepartments();
         }else
-            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
+            System.err.print("\n******* Erreur aucun département n'a été enregistré *******\n");
 
     }
 
     public static void removeDepartment(){
         if (!All_departments_list.isEmpty()){
             displayAllDepartments();
-            All_departments_list.remove(Io.setINT("Numero du departement à supprimer :")-1);
-            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENT MISE A JOUR *******\n");
+            All_departments_list.remove(Io.setINT("Numero du département à supprimer :")-1);
+            System.err.print("\n ******* LISTE DE TOUS LES DEPARTEMENTS MISE A JOUR *******\n");
             displayAllDepartments();
         }else
-            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
+            System.err.print("\n******* Erreur aucun département n'a été enregistré *******\n");
     }
 
     public static void displayAllDepartments(){
@@ -92,6 +92,6 @@ public class Department {
                 );
             }
         }else
-            System.err.print("\n******* Erreur aucun departement n'a été enregistré *******\n");
+            System.err.print("\n******* Erreur aucun département n'a été enregistré *******\n");
     }
 }

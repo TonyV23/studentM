@@ -44,7 +44,7 @@ public class Faculty {
     // method about handling faculties
 
     public static void createNewFaculty(){
-         new Faculty(Io.setString("Nom de la Faculty :"),Io.setString("A propos de la Faculté:"));
+         new Faculty(Io.setString("Nom de la Faculté :"),Io.setString("A propos de la Faculté:"));
     }
 
     public static void removeFaculty(){
@@ -54,7 +54,7 @@ public class Faculty {
             System.err.print("\n ******* LISTE DE TOUTES LES FACULTES MISE A JOUR *******\n");
             displayAllFaculties();
         }else
-            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
     }
 
 
@@ -66,7 +66,7 @@ public class Faculty {
             All_faculties_list.remove(All_faculties_list.size()-1);
             displayAllFaculties();
         }else
-            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
     }
 
     public static void displayAllFaculties(){
@@ -78,6 +78,6 @@ public class Faculty {
                 );
             }
         }else
-            System.err.print("\n******* Erreur aucune faculté n'a été enregisté *******\n");
+            System.err.print("\n******* Erreur aucune faculté n'a été enregistré *******\n");
     }
 }
